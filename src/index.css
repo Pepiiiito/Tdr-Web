@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Typography & Layout */
+@layer base {
+    body {
+        @apply bg-base-900 text-base-200 font-sans;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1 {
+        @apply text-5xl md:text-7xl font-bold tracking-tight text-white;
+    }
+
+    h2 {
+        @apply text-3xl md:text-5xl font-bold tracking-tight text-white;
+    }
+
+    h3 {
+        @apply text-xl md:text-2xl font-bold text-white;
+    }
+
+    p {
+        @apply leading-relaxed;
+    }
+
+    a {
+        @apply transition-colors;
+    }
+}
+
+/* Grid Background */
+body {
+    background-image:
+        linear-gradient(to right, #1A1B1E 1px, transparent 1px),
+        linear-gradient(to bottom, #1A1B1E 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* Custom Scrollbar - Webkit */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Custom Scrollbar - Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #333 transparent;
+}
+
+/* Selection Highlight */
+::selection {
+    @apply bg-tech-accent text-black;
+}
+
+::-moz-selection {
+    @apply bg-tech-accent text-black;
+}
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus Visible States */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    @apply outline-2 outline-offset-2 outline-tech-accent;
+}
+
+/* Input Placeholder Styling */
+input::placeholder,
+textarea::placeholder {
+    @apply text-gray-600;
+}
+
+/* Container Utility */
+@layer components {
+    .container {
+        @apply max-w-7xl mx-auto;
+    }
+}
